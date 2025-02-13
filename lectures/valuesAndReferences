@@ -1,0 +1,38 @@
+const checkIn = function(flightNum, passenger) {
+  flightNum = 'LH999',
+  console.log(flightNum)
+  
+  passenger.name = "Mr. " + passenger.name;
+  
+  if (passenger.passport === 64232932093) {
+    console.log("Checked in")
+  }
+  
+  else {
+    console.log("Wrong password");
+  }
+  
+}
+
+const newPassword = function(person) {
+  person.passport = Math.trunc(Math.random() * 1000000)
+}
+
+const flight = "LH234";
+
+const marian = {
+  name: "Marian Milushev",
+  passport: 64232932093,
+}
+
+//primitives are coppied when used as arguments and 
+//the variable passed into function is not changed
+checkIn(flight, marian);
+
+console.log(flight);
+console.log(marian);
+
+//object, arrays etc are passed as refference so the
+//passed object is changed
+newPassword(marian)
+checkIn(flight, marian);
